@@ -1,6 +1,8 @@
-import classic from "@/assets/taco-classic.jpg";
-import spicy from "@/assets/taco-spicy.jpg";
-import xxl from "@/assets/taco-xxl.jpg";
+import classic from "@/assets/taco-real-1.jpg";
+import spicy from "@/assets/taco-real-2.jpg";
+import xxl from "@/assets/taco-real-3.jpg";
+import bbq from "@/assets/taco-real-4.jpg";
+import veggie from "@/assets/taco-real-5.jpg";
 
 export const favorites = [
   {
@@ -20,6 +22,18 @@ export const favorites = [
     description: "Triple carne, doble queso, patatas y salsa secreta.",
     price: "12,90€",
     image: xxl,
+  },
+  {
+    name: "BBQ Bacon",
+    description: "Doble bacon, BBQ ahumada y cheddar fundido.",
+    price: "9,90€",
+    image: bbq,
+  },
+  {
+    name: "El Veggie",
+    description: "Falafel, verduras asadas y queso vegano.",
+    price: "8,00€",
+    image: veggie,
   },
 ] as const;
 
