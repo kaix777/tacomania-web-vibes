@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const links = [
   { to: "/", label: "Inicio" },
@@ -10,19 +11,22 @@ const links = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [dark, setDark] = useState(false);
+  const [light, setLight] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
-    if (dark) root.classList.add("dark");
-    else root.classList.remove("dark");
-  }, [dark]);
+    if (light) root.classList.add("light");
+    else root.classList.remove("light");
+  }, [light]);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
+    <header className="sticky top-0 z-50 backdrop-blur-md bg-background/85 border-b border-border">
       <div className="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="font-display text-2xl tracking-wider text-primary">
-          TACO<span className="text-foreground">MANIA</span>
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logo} alt="Tacomania" width={40} height={40} className="h-10 w-10 rounded-full ring-2 ring-primary object-cover" />
+          <span className="font-display text-xl tracking-wider hidden sm:inline">
+            TACO<span className="text-primary">MANIA</span>
+          </span>
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           {links.map((l) => (
@@ -38,19 +42,19 @@ export function Header() {
           ))}
           <button
             aria-label="Cambiar tema"
-            onClick={() => setDark((d) => !d)}
+            onClick={() => setLight((d) => !d)}
             className="p-2 rounded-full hover:bg-accent transition-colors"
           >
-            {dark ? <Sun size={18} /> : <Moon size={18} />}
+            {light ? <Moon size={18} /> : <Sun size={18} />}
           </button>
         </nav>
         <div className="flex md:hidden items-center gap-1">
           <button
             aria-label="Cambiar tema"
-            onClick={() => setDark((d) => !d)}
+            onClick={() => setLight((d) => !d)}
             className="p-2 rounded-full hover:bg-accent"
           >
-            {dark ? <Sun size={18} /> : <Moon size={18} />}
+            {light ? <Moon size={18} /> : <Sun size={18} />}
           </button>
           <button
             aria-label="Abrir menú"
