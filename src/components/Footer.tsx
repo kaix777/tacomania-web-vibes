@@ -1,5 +1,5 @@
 import { Instagram, Music2 } from "lucide-react";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 
 export function Footer() {
   return (

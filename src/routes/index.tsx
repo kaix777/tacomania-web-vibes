@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Flame, Music2, Instagram } from "lucide-react";
 import heroImg from "@/assets/taco-real-1.jpg";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 import { favorites } from "@/data/menu";
 
 export const Route = createFileRoute("/")({
