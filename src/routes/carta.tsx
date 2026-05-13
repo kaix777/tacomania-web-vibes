@@ -37,13 +37,25 @@ function Carta() {
               {section.items.map((item) => (
                 <div
                   key={item.name}
-                  className="group rounded-2xl bg-card border border-border p-5 shadow-card hover:border-primary hover:-translate-y-0.5 transition-all"
+                  className="group flex gap-4 rounded-2xl bg-card border border-border p-3 shadow-card hover:border-primary hover:-translate-y-0.5 transition-all"
                 >
-                  <div className="flex items-baseline justify-between gap-4">
-                    <h3 className="font-bold text-lg">{item.name}</h3>
-                    <span className="font-display text-xl text-primary whitespace-nowrap">{item.price}</span>
+                  <div className="h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-black">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      width={200}
+                      height={200}
+                      loading="lazy"
+                      className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
                   </div>
-                  <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
+                  <div className="flex-1 min-w-0 py-1">
+                    <div className="flex items-baseline justify-between gap-3">
+                      <h3 className="font-bold text-lg truncate">{item.name}</h3>
+                      <span className="font-display text-xl text-primary whitespace-nowrap">{item.price}</span>
+                    </div>
+                    <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
