@@ -30,7 +30,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold">Algo se quemó en la cocina</h1>
-        <p className="mt-2 text-sm text-muted-foreground">{import.meta.env.DEV ? error.message : "Ocurrió un error inesperado."}</p>
+        <p className="mt-2 text-sm text-muted-foreground">{error.message}</p>
         <button onClick={() => { router.invalidate(); reset(); }} className="mt-6 rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground">Reintentar</button>
       </div>
     </div>
@@ -42,12 +42,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Tacomania — Tacos franceses con mucho queso" },
-      { name: "description", content: "Los mejores tacos franceses de la ciudad. Comida rápida, potente y con mucho queso fundido." },
-      { property: "og:title", content: "Tacomania — Tacos franceses" },
-      { property: "og:description", content: "Tacos franceses XXL con queso fundido. Pide ya." },
+      { title: "Tacomania — Los mejores tacos de Torremolinos" },
+      { name: "description", content: "Los mejores tacos franceses de Torremolinos. Comida rápida, potente y con mucho queso fundido." },
+      { property: "og:title", content: "Tacomania — Los mejores tacos de Torremolinos" },
+      { property: "og:description", content: "Los mejores tacos franceses de Torremolinos. Comida rápida, potente y con mucho queso fundido." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Tacomania — Los mejores tacos de Torremolinos" },
+      { name: "twitter:description", content: "Los mejores tacos franceses de Torremolinos. Comida rápida, potente y con mucho queso fundido." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/645fd307-922d-4a69-a519-0f7c2ca3b4ed" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/645fd307-922d-4a69-a519-0f7c2ca3b4ed" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
