@@ -26,24 +26,35 @@ function Index() {
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/30" />
         </div>
         <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-primary blur-3xl opacity-40" />
-        <div className="relative mx-auto max-w-6xl px-4 py-20 md:py-32 grid md:grid-cols-2 gap-10 items-center">
-          <div>
+        <div className="relative mx-auto max-w-6xl px-4 py-12 sm:py-20 md:py-32 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
+          {/* Logo on top for mobile, on the right for desktop */}
+          <div className="relative flex md:hidden justify-center order-1">
+            <div className="absolute inset-0 rounded-full bg-primary blur-3xl opacity-50" />
+            <img
+              src={logo}
+              alt="Logo de Tacomania"
+              width={400}
+              height={400}
+              className="relative w-56 sm:w-72 drop-shadow-[0_20px_60px_rgba(255,40,40,0.5)]"
+            />
+          </div>
+          <div className="order-2 md:order-1 text-center md:text-left">
             <span className="inline-flex items-center gap-2 rounded-full bg-primary/20 backdrop-blur border border-primary/40 px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary">
               <Flame size={14} /> French tacos · Street food
             </span>
-            <h1 className="mt-5 font-display text-7xl md:text-9xl leading-[0.85] text-primary drop-shadow-[0_4px_30px_rgba(255,40,40,0.5)]">
+            <h1 className="mt-4 font-display text-6xl sm:text-7xl md:text-9xl leading-[0.85] text-primary drop-shadow-[0_4px_30px_rgba(255,40,40,0.5)]">
               TACO<br />MANIA
             </h1>
-            <p className="mt-5 text-lg md:text-xl font-semibold max-w-md">
+            <p className="mt-4 text-base sm:text-lg md:text-xl font-semibold max-w-md mx-auto md:mx-0">
               Los mejores tacos franceses de la ciudad.
             </p>
-            <p className="mt-2 text-sm md:text-base opacity-80 max-w-md">
+            <p className="mt-2 text-sm md:text-base opacity-80 max-w-md mx-auto md:mx-0">
               Por la noche y por el día. Comida rápida, potente y con muchísimo queso fundido.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 md:mt-8 flex flex-wrap gap-3 justify-center md:justify-start">
               <Link
                 to="/carta"
-                className="group inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3.5 font-bold uppercase text-sm tracking-wide hover:bg-primary-glow hover:scale-105 active:scale-100 transition-all shadow-glow"
+                className="group inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 sm:px-7 py-3 sm:py-3.5 font-bold uppercase text-sm tracking-wide hover:bg-primary-glow hover:scale-105 active:scale-100 transition-all shadow-glow"
               >
                 Ver carta
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -58,7 +69,7 @@ function Index() {
               </a>
             </div>
           </div>
-          <div className="relative hidden md:flex justify-center">
+          <div className="relative hidden md:flex justify-center order-2">
             <div className="absolute inset-0 rounded-full bg-primary blur-3xl opacity-50" />
             <img
               src={logo}
