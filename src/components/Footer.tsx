@@ -4,7 +4,7 @@ import logo from "@/assets/logo.png";
 export function Footer() {
   return (
     <footer className="bg-black text-white mt-24 border-t-4 border-primary">
-      <div className="mx-auto max-w-6xl px-4 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="mx-auto max-w-6xl px-4 py-12 flex flex-col items-center justify-center gap-6 text-center">
         <div className="flex items-center gap-3">
           <img src={logo} alt="Tacomania" width={48} height={48} className="h-12 w-12 rounded-full ring-2 ring-primary object-cover" />
           <div className="font-display text-2xl tracking-wider">
