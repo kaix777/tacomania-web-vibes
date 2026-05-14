@@ -19,6 +19,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [selected, setSelected] = useState<Product | null>(null);
   return (
     <>
       {/* HERO */}
