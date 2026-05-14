@@ -29,7 +29,7 @@ export function Footer() {
             <Instagram size={18} />
           </a>
         </div>
-        <p className="text-sm opacity-70 text-center md:text-right">
+        <p className="text-sm opacity-70 text-center">
           © {new Date().getFullYear()} Tacomania.<br className="md:hidden" /> Hecho con queso fundido.
         </p>
       </div>
