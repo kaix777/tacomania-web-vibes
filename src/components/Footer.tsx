@@ -11,7 +11,7 @@ export function Footer() {
             TACO<span className="text-primary">MANIA</span>
           </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex w-full items-center justify-center gap-3">
           <a
             href="https://www.tiktok.com/@tacomania.to"
             target="_blank" rel="noopener noreferrer"
