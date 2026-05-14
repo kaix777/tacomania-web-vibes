@@ -16,7 +16,7 @@ export function ProductDialog({
 }) {
   return (
     <Dialog open={!!product} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl p-0 overflow-hidden border-primary/30 bg-card">
+      <DialogContent className="w-[calc(100%-1.5rem)] max-w-2xl max-h-[90vh] overflow-y-auto p-0 rounded-2xl border-primary/30 bg-card">
         {product && (
           <div className="grid sm:grid-cols-2">
             <div className="aspect-square sm:aspect-auto bg-black overflow-hidden">
