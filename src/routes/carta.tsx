@@ -61,7 +61,7 @@ function Carta() {
                     </div>
                     <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
                   </div>
-                </div>
+                </button>
               ))}
             </div>
           </section>
@@ -71,6 +71,9 @@ function Carta() {
           * Precios orientativos. Pueden variar según local y promociones.
         </p>
       </div>
+      <ProductDialog product={selected} onOpenChange={(o) => !o && setSelected(null)} />
     </>
+  );
+}
   );
 }
