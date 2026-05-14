@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { ArrowRight, Flame, Music2, Instagram } from "lucide-react";
 import heroImg from "@/assets/taco-real-1.jpg";
 import logo from "@/assets/logo.png";
 import { favorites } from "@/data/menu";
+import { ProductDialog, type Product } from "@/components/ProductDialog";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,6 +19,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [selected, setSelected] = useState<Product | null>(null);
   return (
     <>
       {/* HERO */}
@@ -128,9 +131,11 @@ function Index() {
           </div>
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {favorites.slice(0, 6).map((t) => (
-              <article
+              <button
+                type="button"
                 key={t.name}
-                className="group rounded-3xl overflow-hidden bg-card border border-border shadow-card hover:-translate-y-1 hover:border-primary hover:shadow-glow transition-all duration-300"
+                onClick={() => setSelected({ name: t.name, description: t.description, price: t.price, image: t.image })}
+                className="group text-left rounded-3xl overflow-hidden bg-card border border-border shadow-card hover:-translate-y-1 hover:border-primary hover:shadow-glow transition-all duration-300 cursor-pointer"
               >
                 <div className="aspect-[4/3] overflow-hidden bg-black">
                   <img
@@ -151,7 +156,7 @@ function Index() {
                   </div>
                   <p className="mt-2 text-sm text-muted-foreground">{t.description}</p>
                 </div>
-              </article>
+              </button>
             ))}
           </div>
         </div>
@@ -186,6 +191,7 @@ function Index() {
           </div>
         </div>
       </section>
+      <ProductDialog product={selected} onOpenChange={(o) => !o && setSelected(null)} />
     </>
   );
 }

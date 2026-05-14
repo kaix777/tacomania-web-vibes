@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { menu } from "@/data/menu";
+import { ProductDialog, type Product } from "@/components/ProductDialog";
 
 export const Route = createFileRoute("/carta")({
   head: () => ({
@@ -14,6 +16,7 @@ export const Route = createFileRoute("/carta")({
 });
 
 function Carta() {
+  const [selected, setSelected] = useState<Product | null>(null);
   return (
     <>
       <section className="bg-grain text-primary-foreground">
@@ -35,9 +38,11 @@ function Carta() {
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               {section.items.map((item) => (
-                <div
+                <button
+                  type="button"
                   key={item.name}
-                  className="group flex gap-4 rounded-2xl bg-card border border-border p-3 shadow-card hover:border-primary hover:-translate-y-0.5 transition-all"
+                  onClick={() => setSelected({ name: item.name, description: item.desc, price: item.price, image: item.image })}
+                  className="group flex gap-4 rounded-2xl bg-card border border-border p-3 shadow-card hover:border-primary hover:-translate-y-0.5 transition-all text-left w-full cursor-pointer"
                 >
                   <div className="h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-black">
                     <img
@@ -56,7 +61,7 @@ function Carta() {
                     </div>
                     <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
                   </div>
-                </div>
+                </button>
               ))}
             </div>
           </section>
@@ -66,6 +71,7 @@ function Carta() {
           * Precios orientativos. Pueden variar según local y promociones.
         </p>
       </div>
+      <ProductDialog product={selected} onOpenChange={(o) => !o && setSelected(null)} />
     </>
   );
 }
