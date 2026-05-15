@@ -3,21 +3,21 @@
 La build normal (`bun run build`) sigue siendo para Lovable. Para Vercel, Netlify o Cloudflare Pages usa la build estática:
 
 ```bash
-bun run build:static
+npm run build:static
 ```
 
 ## Vercel
 
 Los ajustes ya quedan en `vercel.json`:
 
-- Build Command: `bun run build:static`
+- Build Command: `npm run build:static`
 - Output Directory: `dist-static`
 
 ## Netlify
 
 Los ajustes ya quedan en `netlify.toml`:
 
-- Build command: `bun run build:static`
+- Build command: `npm run build:static`
 - Publish directory: `dist-static`
 
 ## Cloudflare Pages
@@ -25,7 +25,7 @@ Los ajustes ya quedan en `netlify.toml`:
 Configura el proyecto así:
 
 - Framework preset: `None`
-- Build command: `bun run build:static`
+- Build command: `npm run build:static`
 - Build output directory: `dist-static`
 - Root directory: `/`
 

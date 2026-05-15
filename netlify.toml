@@ -1,5 +1,5 @@
 [build]
-  command = "bun run build:static"
+  command = "npm run build:static"
   publish = "dist-static"
 
 [[redirects]]
