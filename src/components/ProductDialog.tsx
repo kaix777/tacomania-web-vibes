@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 export type Product = {
@@ -14,8 +15,21 @@ export function ProductDialog({
   product: Product | null;
   onOpenChange: (open: boolean) => void;
 }) {
+  const open = !!product;
+
+  // Workaround Radix: a veces deja pointer-events:none en el body al cerrar
+  // y la página se "congela". Limpiamos manualmente cuando se cierra.
+  useEffect(() => {
+    if (!open) {
+      const id = window.setTimeout(() => {
+        document.body.style.pointerEvents = "";
+      }, 100);
+      return () => window.clearTimeout(id);
+    }
+  }, [open]);
+
   return (
-    <Dialog open={!!product} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="w-[calc(100%-1.5rem)] max-w-2xl max-h-[90vh] overflow-y-auto p-0 rounded-2xl border-primary/30 bg-card">
         {product && (
           <div className="grid sm:grid-cols-2">
