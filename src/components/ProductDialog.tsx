@@ -1,4 +1,5 @@
 import { useEffect, useId } from "react";
+import { X } from "lucide-react";
 
 export type Product = {
   name: string;
@@ -61,7 +62,7 @@ export function ProductDialog({
           onClick={() => onOpenChange(false)}
           className="absolute right-3 top-3 z-10 grid h-10 w-10 place-items-center rounded-full bg-card/90 text-card-foreground shadow-lg ring-1 ring-border transition hover:bg-accent focus:outline-none focus:ring-2 focus:ring-ring"
         >
-          ×
+          <X className="h-5 w-5" aria-hidden="true" />
         </button>
 
         <div className="grid sm:grid-cols-2">
