@@ -1,32 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
-import { Phone, MessageCircle, MapPin, Clock, Check } from "lucide-react";
+import { Phone, MapPin, Clock } from "lucide-react";
 
 export const Route = createFileRoute("/contacto")({
   head: () => ({
     meta: [
       { title: "Contacto — Tacomania" },
-      { name: "description", content: "Llámanos, escríbenos por WhatsApp o ven a vernos. Tacomania te espera." },
+      { name: "description", content: "Visítanos en Avenida Isabel Manoja 21. Abierto todos los días de 19:00 a 02:00." },
       { property: "og:title", content: "Contacto — Tacomania" },
-      { property: "og:description", content: "Teléfono, WhatsApp, dirección y horario." },
+      { property: "og:description", content: "Dirección, horario y cómo llegar a Tacomania." },
     ],
   }),
   component: Contacto,
 });
 
 const PHONE = "+34 600 000 000";
-const WHATSAPP = "+34600000000";
+const ADDRESS = "Avenida Isabel Manoja 21";
+const SCHEDULE = "Todos los días de 19:00 a 02:00";
+// Google Maps embed para Tacomania (Avenida Isabel Manoja 21)
+const MAP_EMBED =
+  "https://www.google.com/maps?q=Tacomania,Avenida+Isabel+Manoja+21&output=embed";
+const MAP_LINK =
+  "https://www.google.com/maps/place/Tacomania/@36.6239541,-4.5047603,17z/data=!3m1!4b1!4m6!3m5!1s0xd72fb664d59e771:0xd28c28ebc69c7b79!8m2!3d36.6239498!4d-4.5021854";
 
 function Contacto() {
-  const [sent, setSent] = useState(false);
-
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSent(true);
-    (e.currentTarget as HTMLFormElement).reset();
-    setTimeout(() => setSent(false), 5000);
-  };
-
   return (
     <>
       <section className="bg-grain text-primary-foreground">
@@ -42,62 +38,26 @@ function Contacto() {
         <div className="space-y-4">
           <InfoCard icon={<Phone />} title="Teléfono" value={PHONE} href={`tel:${PHONE.replace(/\s/g, "")}`} />
           <InfoCard
-            icon={<MessageCircle />}
-            title="WhatsApp"
-            value="Escríbenos directo"
-            href={`https://wa.me/${WHATSAPP.replace("+", "")}`}
+            icon={<MapPin />}
+            title="Dirección"
+            value={ADDRESS}
+            href={MAP_LINK}
           />
-          <InfoCard icon={<MapPin />} title="Dirección" value="Calle Mayor 123, Madrid" />
-          <InfoCard
-            icon={<Clock />}
-            title="Horario"
-            value="Lun–Jue 12:00 – 23:00 · Vie–Sáb 12:00 – 01:00 · Dom 13:00 – 23:00"
-          />
-
-          <div className="rounded-2xl overflow-hidden border border-border bg-card aspect-video flex items-center justify-center text-muted-foreground text-sm">
-            <div className="text-center px-4">
-              <MapPin className="mx-auto mb-2 text-primary" />
-              Aquí irá el mapa de Google Maps
-            </div>
-          </div>
+          <InfoCard icon={<Clock />} title="Horario" value={SCHEDULE} />
         </div>
 
-        {/* FORM */}
-        <form
-          onSubmit={onSubmit}
-          className="rounded-3xl bg-card border border-border p-6 md:p-8 shadow-card space-y-4"
-        >
-          <h2 className="font-display text-3xl">Escríbenos</h2>
-          <p className="text-sm text-muted-foreground">
-            ¿Reservas, eventos o sugerencias? Te respondemos pronto.
-          </p>
-
-          <Field label="Nombre" name="name" required />
-          <Field label="Email" name="email" type="email" required />
-          <div>
-            <label className="text-sm font-semibold" htmlFor="message">Mensaje</label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows={5}
-              className="mt-1 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full rounded-full bg-primary text-primary-foreground font-bold uppercase tracking-wide py-3 hover:bg-primary-glow active:scale-[0.99] transition-all"
-          >
-            Enviar mensaje
-          </button>
-
-          {sent && (
-            <div className="flex items-center gap-2 rounded-xl bg-primary/10 text-primary px-4 py-3 text-sm font-semibold">
-              <Check size={18} /> ¡Mensaje enviado! Te respondemos pronto.
-            </div>
-          )}
-        </form>
+        {/* MAPA */}
+        <div className="rounded-2xl overflow-hidden border border-border bg-card aspect-video">
+          <iframe
+            title="Mapa Tacomania"
+            src={MAP_EMBED}
+            className="w-full h-full"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+        </div>
       </div>
     </>
   );
@@ -115,20 +75,9 @@ function InfoCard({
       </div>
     </div>
   );
-  return href ? <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer">{inner}</a> : inner;
-}
-
-function Field({ label, name, type = "text", required }: { label: string; name: string; type?: string; required?: boolean }) {
-  return (
-    <div>
-      <label className="text-sm font-semibold" htmlFor={name}>{label}</label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        required={required}
-        className="mt-1 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-      />
-    </div>
-  );
+  return href ? (
+    <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer">
+      {inner}
+    </a>
+  ) : inner;
 }
