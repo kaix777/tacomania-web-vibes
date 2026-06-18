@@ -22,15 +22,15 @@ export const Route = createFileRoute("/contacto")({
 });
 
 const ADDRESS_LINE_1 = "Avenida Isabel Manoja 21";
-const ADDRESS_LINE_2 = "Marbella, Málaga";
+const ADDRESS_LINE_2 = "Torremolinos, Málaga";
 const SCHEDULE_TEXT = "Todos los días · 19:00 – 02:00";
 
 const MAP_EMBED =
-  "https://www.google.com/maps?q=Tacomania,Avenida+Isabel+Manoja+21,Marbella&output=embed";
+  "https://www.google.com/maps?q=36.6239498,-4.5021854&output=embed&z=17";
 const MAP_LINK =
   "https://www.google.com/maps/place/Tacomania/@36.6239541,-4.5047603,17z/data=!3m1!4b1!4m6!3m5!1s0xd72fb664d59e771:0xd28c28ebc69c7b79!8m2!3d36.6239498!4d-4.5021854";
 const DIRECTIONS_LINK =
-  "https://www.google.com/maps/dir/?api=1&destination=Tacomania+Avenida+Isabel+Manoja+21+Marbella";
+  "https://www.google.com/maps/dir/?api=1&destination=Tacomania,Avenida+Isabel+Manoja+21,Torremolinos,Malaga";
 
 /** Tacomania abre 19:00–02:00 todos los días (cierra a las 02:00 del día siguiente). */
 function useOpenNow() {
@@ -188,7 +188,7 @@ function Contacto() {
               />
               {/* Etiqueta flotante */}
               <div className="pointer-events-none absolute left-4 top-4 rounded-full bg-background/90 backdrop-blur px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] shadow-card border border-border">
-                Tacomania · Marbella
+                Tacomania · Torremolinos
               </div>
             </div>
           </div>
