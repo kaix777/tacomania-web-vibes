@@ -31,10 +31,21 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-taco-bg: #0F0F0F;
+  --color-taco-yellow: #FFCC00;
+  --color-taco-red: #E60000;
   --font-display: "Bebas Neue", "Impact", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --shadow-glow: 0 20px 60px -20px color-mix(in oklab, var(--primary) 60%, transparent);
   --shadow-card: 0 8px 24px -12px color-mix(in oklab, var(--primary-deep) 35%, transparent);
+}
+
+@utility bg-taco-noise {
+  background-color: #0F0F0F;
+  background-image:
+    radial-gradient(circle at 20% 15%, rgba(255,204,0,0.05), transparent 50%),
+    radial-gradient(circle at 80% 85%, rgba(230,0,0,0.06), transparent 55%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.012) 0 2px, transparent 2px 6px);
 }
 
 /* Default = DARK (negro + rojo). Light variant available via .light */
