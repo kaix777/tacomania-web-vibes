@@ -1,6 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { Flame, ArrowRight, Pizza, IceCreamCone, GlassWater, Utensils, Sparkles } from "lucide-react";
+import {
+  Flame,
+  ArrowRight,
+  Pizza,
+  IceCreamCone,
+  GlassWater,
+  Utensils,
+  Sparkles,
+} from "lucide-react";
 import logo from "@/assets/logo.png";
 
 // Tacos
@@ -31,6 +39,16 @@ import kapsalon from "@/assets/kapsalon.jpg";
 import kebabPlate from "@/assets/kebab-plate.jpg";
 import salchipapas from "@/assets/salchipapas.jpg";
 import rice from "@/assets/rice.jpg";
+
+// Patatas por tamaño
+import friesS from "@/assets/fries-s.jpg";
+import friesM from "@/assets/fries-m.jpg";
+import friesL from "@/assets/fries-l.jpg";
+
+// Arroz por tamaño
+import riceS from "@/assets/rice-s.jpg";
+import riceM from "@/assets/rice-m.jpg";
+import riceL from "@/assets/rice-l.jpg";
 
 // Extras / Postres / Bebidas
 import supercombo from "@/assets/supercombo.jpg";
@@ -92,20 +110,67 @@ const sections: Section[] = [
     groups: [
       {
         items: [
-          { name: "Taco Pollo", price: "6,50 €", desc: "Pollo marinado, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoPollo },
-          { name: "Taco Ternera", price: "7,50 €", tag: "Top", desc: "Ternera, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoTernera },
-          { name: "Taco Mixto", price: "7,00 €", desc: "Pollo marinado, ternera, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoMixto },
-          { name: "Taco Shawarma", price: "6,00 €", tag: "Top", desc: "Carne shawarma, patatas, queso, salsa de yogur, salsa Tacomanía, salsa andalouse.", image: tacoShawarma },
-          { name: "Taco Frankfurt", price: "6,50 €", desc: "Salchicha, ternera, patatas, queso, cebolla crispy, salsa rosa, salsa Tacomanía.", image: tacoFrankfurt },
-          { name: "Taco Cordon Bleu", price: "6,50 €", desc: "Cordon bleu, jamón, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoCordon },
-          { name: "Taco Tenders", price: "6,00 €", desc: "Pollo crispy, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoTenders },
-          { name: "Taco Nuggets", price: "6,00 €", desc: "Nuggets, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoNuggets },
+          {
+            name: "Taco Pollo",
+            price: "6,50 €",
+            desc: "Pollo marinado, patatas, queso, salsa andalouse, salsa Tacomanía.",
+            image: tacoPollo,
+          },
+          {
+            name: "Taco Ternera",
+            price: "7,50 €",
+            tag: "Top",
+            desc: "Ternera, patatas, queso, salsa andalouse, salsa Tacomanía.",
+            image: tacoTernera,
+          },
+          {
+            name: "Taco Mixto",
+            price: "7,00 €",
+            desc: "Pollo marinado, ternera, patatas, queso, salsa andalouse, salsa Tacomanía.",
+            image: tacoMixto,
+          },
+          {
+            name: "Taco Shawarma",
+            price: "6,00 €",
+            tag: "Top",
+            desc: "Carne shawarma, patatas, queso, salsa de yogur, salsa Tacomanía, salsa andalouse.",
+            image: tacoShawarma,
+          },
+          {
+            name: "Taco Frankfurt",
+            price: "6,50 €",
+            desc: "Salchicha, ternera, patatas, queso, cebolla crispy, salsa rosa, salsa Tacomanía.",
+            image: tacoFrankfurt,
+          },
+          {
+            name: "Taco Cordon Bleu",
+            price: "6,50 €",
+            desc: "Cordon bleu, jamón, patatas, queso, salsa andalouse, salsa Tacomanía.",
+            image: tacoCordon,
+          },
+          {
+            name: "Taco Tenders",
+            price: "6,00 €",
+            desc: "Pollo crispy, patatas, queso, salsa andalouse, salsa Tacomanía.",
+            image: tacoTenders,
+          },
+          {
+            name: "Taco Nuggets",
+            price: "6,00 €",
+            desc: "Nuggets, patatas, queso, salsa andalouse, salsa Tacomanía.",
+            image: tacoNuggets,
+          },
         ],
       },
       {
         title: "También por aquí",
         items: [
-          { name: "Shawarma Clásico", price: "4,50 €", desc: "El de toda la vida: pan caliente, carne especiada, verduras y salsa.", image: shawarmaWrap },
+          {
+            name: "Shawarma Clásico",
+            price: "4,50 €",
+            desc: "El de toda la vida: pan caliente, carne especiada, verduras y salsa.",
+            image: shawarmaWrap,
+          },
         ],
       },
     ],
@@ -145,9 +210,25 @@ const sections: Section[] = [
       {
         title: "Especialidades",
         items: [
-          { name: "Tacomanía", price: "9,00 €", tag: "Top", desc: "Pollo marinado, ternera, salsa andalouse.", image: pizzaBbq },
-          { name: "Barbacoa", price: "8,50 €", desc: "Carne picada, salchicha, jamón, salsa barbacoa.", image: pizzaBbq },
-          { name: "Campera", price: "8,00 €", desc: "Huevo, carne picada.", image: pizzaCarbonara },
+          {
+            name: "Tacomanía",
+            price: "9,00 €",
+            tag: "Top",
+            desc: "Pollo marinado, ternera, salsa andalouse.",
+            image: pizzaBbq,
+          },
+          {
+            name: "Barbacoa",
+            price: "8,50 €",
+            desc: "Carne picada, salchicha, jamón, salsa barbacoa.",
+            image: pizzaBbq,
+          },
+          {
+            name: "Campera",
+            price: "8,00 €",
+            desc: "Huevo, carne picada.",
+            image: pizzaCarbonara,
+          },
           { name: "Carbonara", price: "8,00 €", image: pizzaCarbonara },
         ],
       },
@@ -162,18 +243,54 @@ const sections: Section[] = [
     groups: [
       {
         items: [
-          { name: "Ración simple", price: "2,50 €", desc: "Crujientes, recién hechas.", image: fries },
-          { name: "Kapsalon", price: "6,50 €", tag: "Top", desc: "Patatas, kebab, queso fundido y salsas.", image: kapsalon },
-          { name: "Plato Kebab", price: "6,50 €", desc: "Patatas, kebab y verduras.", image: kebabPlate },
-          { name: "Salchipapas", price: "6,00 €", desc: "Patatas, salchicha, ketchup y mayonesa.", image: salchipapas },
+          {
+            name: "Ración simple",
+            price: "2,50 €",
+            desc: "Crujientes, recién hechas.",
+            image: fries,
+          },
+          {
+            name: "Kapsalon",
+            price: "6,50 €",
+            tag: "Top",
+            desc: "Patatas, kebab, queso fundido y salsas.",
+            image: kapsalon,
+          },
+          {
+            name: "Plato Kebab",
+            price: "6,50 €",
+            desc: "Patatas, kebab y verduras.",
+            image: kebabPlate,
+          },
+          {
+            name: "Salchipapas",
+            price: "6,00 €",
+            desc: "Patatas, salchicha, ketchup y mayonesa.",
+            image: salchipapas,
+          },
         ],
       },
       {
         title: "Crea tus patatas",
         items: [
-          { name: "Tamaño S", price: "4,00 €", desc: "1 salsa  ·  1 topping.", image: fries },
-          { name: "Tamaño M", price: "6,00 €", desc: "2 salsas  ·  2 toppings.", image: fries },
-          { name: "Tamaño L", price: "8,00 €", desc: "3 salsas  ·  3 toppings.", image: fries },
+          {
+            name: "Tamaño S",
+            price: "4,00 €",
+            desc: "1 salsa · 1 topping.",
+            image: friesS,
+          },
+          {
+            name: "Tamaño M",
+            price: "6,00 €",
+            desc: "2 salsas · 2 toppings.",
+            image: friesM,
+          },
+          {
+            name: "Tamaño L",
+            price: "8,00 €",
+            desc: "3 salsas · 3 toppings.",
+            image: friesL,
+          },
         ],
       },
     ],
@@ -188,9 +305,24 @@ const sections: Section[] = [
     groups: [
       {
         items: [
-          { name: "Tamaño S", price: "5,00 €", desc: "1 salsa y 1 topping a elegir.", image: rice },
-          { name: "Tamaño M", price: "7,00 €", desc: "2 salsas y 2 toppings a elegir.", image: rice },
-          { name: "Tamaño L", price: "9,00 €", desc: "3 salsas y 3 toppings a elegir.", image: rice },
+          {
+            name: "Tamaño S",
+            price: "5,00 €",
+            desc: "1 salsa y 1 topping a elegir.",
+            image: riceS,
+          },
+          {
+            name: "Tamaño M",
+            price: "7,00 €",
+            desc: "2 salsas y 2 toppings a elegir.",
+            image: riceM,
+          },
+          {
+            name: "Tamaño L",
+            price: "9,00 €",
+            desc: "3 salsas y 3 toppings a elegir.",
+            image: riceL,
+          },
         ],
       },
     ],
@@ -204,9 +336,25 @@ const sections: Section[] = [
     groups: [
       {
         items: [
-          { name: "Supercombo", price: "10,00 €", tag: "Top", desc: "Nuggets, tenders, palos de queso, alitas, patatas, carne a elegir y dos salsas.", image: supercombo },
-          { name: "Completa tu comida a menú", price: "3,00 €", desc: "Incluye patatas y bebida.", image: fries },
-          { name: "Completa tu menú con entrante", price: "2,50 €", desc: "A elegir entre nuggets, tenders, palos de queso o alitas.", image: sauces },
+          {
+            name: "Supercombo",
+            price: "10,00 €",
+            tag: "Top",
+            desc: "Nuggets, tenders, palos de queso, alitas, patatas, carne a elegir y dos salsas.",
+            image: supercombo,
+          },
+          {
+            name: "Completa tu comida a menú",
+            price: "3,00 €",
+            desc: "Incluye patatas y bebida.",
+            image: fries,
+          },
+          {
+            name: "Completa tu menú con entrante",
+            price: "2,50 €",
+            desc: "A elegir entre nuggets, tenders, palos de queso o alitas.",
+            image: sauces,
+          },
         ],
       },
     ],
@@ -220,8 +368,18 @@ const sections: Section[] = [
     groups: [
       {
         items: [
-          { name: "Batidos", price: "4,00 €", desc: "Consulta nuestros sabores del día.", image: milkshake },
-          { name: "Tartas del día", price: "3,00 €", desc: "Pregúntanos por las tartas disponibles.", image: cake },
+          {
+            name: "Batidos",
+            price: "4,00 €",
+            desc: "Consulta nuestros sabores del día.",
+            image: milkshake,
+          },
+          {
+            name: "Tartas del día",
+            price: "3,00 €",
+            desc: "Pregúntanos por las tartas disponibles.",
+            image: cake,
+          },
         ],
       },
     ],
@@ -271,7 +429,9 @@ function Hero() {
             <Flame size={14} /> Nuestra carta
           </span>
           <h1 className="mt-5 font-display text-7xl md:text-9xl leading-[0.85] text-primary drop-shadow-[0_4px_30px_rgba(255,40,40,0.45)]">
-            LA<br />CARTA
+            LA
+            <br />
+            CARTA
           </h1>
           <p className="mt-5 text-lg md:text-xl font-semibold max-w-md mx-auto md:mx-0">
             Tacos franceses, pizzas y mucho más.
@@ -317,7 +477,7 @@ function TabsNav() {
           if (e.isIntersecting) setActive(e.target.id);
         });
       },
-      { rootMargin: "-30% 0px -60% 0px", threshold: 0 },
+      { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
     );
     sections.forEach((s) => {
       const el = document.getElementById(s.id);
@@ -327,7 +487,8 @@ function TabsNav() {
   }, []);
 
   useEffect(() => {
-    const el = railRef.current?.querySelector<HTMLElement>(`[data-tab="${active}"]`);
+    const el =
+      railRef.current?.querySelector<HTMLElement>(`[data-tab="${active}"]`);
     el?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
   }, [active]);
 
@@ -366,18 +527,24 @@ function MenuSection({ section }: { section: Section }) {
     <section id={section.id} className="scroll-mt-24">
       <header className="mb-10">
         <div className="flex items-center gap-3">
-          <span className="font-display text-3xl text-primary leading-none">{section.number}</span>
+          <span className="font-display text-3xl text-primary leading-none">
+            {section.number}
+          </span>
           <span className="h-px w-12 bg-primary/40" />
           <span className="text-xs font-bold uppercase tracking-[0.3em] text-primary/90">
             {section.kicker}
           </span>
         </div>
         <div className="mt-3 flex items-end gap-5">
-          <h2 className="font-display text-5xl md:text-7xl leading-none">{section.title}</h2>
+          <h2 className="font-display text-5xl md:text-7xl leading-none">
+            {section.title}
+          </h2>
           <section.Icon className="text-primary mb-2" size={28} />
         </div>
         {section.intro && (
-          <p className="mt-4 max-w-2xl text-muted-foreground">{section.intro}</p>
+          <p className="mt-4 max-w-2xl text-muted-foreground">
+            {section.intro}
+          </p>
         )}
         <div className="mt-6 h-[2px] w-24 bg-gradient-to-r from-primary to-transparent" />
       </header>
@@ -405,7 +572,9 @@ function GroupBlock({ group }: { group: Group }) {
   return (
     <div>
       {group.title && (
-        <h3 className="font-display text-3xl text-primary mb-6">{group.title}</h3>
+        <h3 className="font-display text-3xl text-primary mb-6">
+          {group.title}
+        </h3>
       )}
       <div className="grid gap-5 sm:gap-6 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {group.items.map((item) => (
@@ -440,7 +609,9 @@ function ProductCard({ item }: { item: Item }) {
         )}
       </div>
       <div className="flex-1 flex flex-col p-4">
-        <h4 className="font-display text-lg sm:text-xl leading-tight">{item.name}</h4>
+        <h4 className="font-display text-lg sm:text-xl leading-tight">
+          {item.name}
+        </h4>
         {item.desc && (
           <p className="mt-1.5 text-xs sm:text-sm text-muted-foreground leading-snug line-clamp-3">
             {item.desc}
@@ -458,7 +629,9 @@ function ExtrasCard({ extra }: { extra: Extra }) {
       <div className="relative">
         <div className="flex items-center gap-2 text-primary">
           <Sparkles size={18} />
-          <span className="text-xs font-bold uppercase tracking-[0.3em]">A tu manera</span>
+          <span className="text-xs font-bold uppercase tracking-[0.3em]">
+            A tu manera
+          </span>
         </div>
         <h4 className="mt-2 font-display text-3xl">{extra.title}</h4>
         <ul className="mt-4 space-y-2 text-sm md:text-base text-foreground/85">
@@ -479,7 +652,8 @@ function FinalCta() {
     <section className="relative overflow-hidden rounded-3xl bg-grain text-primary-foreground p-8 md:p-14 text-center">
       <h2 className="font-display text-4xl md:text-5xl">¿Listo para pedir?</h2>
       <p className="mt-3 max-w-xl mx-auto opacity-90">
-        Pásate por la tienda. Te esperamos con la plancha encendida y el queso fundiéndose.
+        Pásate por la tienda. Te esperamos con la plancha encendida y el queso
+        fundiéndose.
       </p>
       <div className="mt-6 flex flex-wrap justify-center gap-3">
         <Link
@@ -487,7 +661,10 @@ function FinalCta() {
           className="group inline-flex items-center gap-2 rounded-full bg-black text-white px-7 py-3.5 font-bold uppercase text-sm tracking-wide hover:scale-105 transition-transform"
         >
           Cómo llegar
-          <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          <ArrowRight
+            size={18}
+            className="group-hover:translate-x-1 transition-transform"
+          />
         </Link>
         <Link
           to="/"
@@ -497,7 +674,8 @@ function FinalCta() {
         </Link>
       </div>
       <p className="mt-8 text-xs opacity-70">
-        * Carta orientativa. Precios y disponibilidad pueden variar según promociones.
+        * Carta orientativa. Precios y disponibilidad pueden variar según
+        promociones.
       </p>
     </section>
   );
