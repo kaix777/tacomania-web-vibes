@@ -4,14 +4,17 @@ import { Flame, ArrowRight, Pizza, IceCreamCone, GlassWater, Utensils, Sparkles 
 import logo from "@/assets/logo.png";
 
 // Tacos
-import tacoClassic from "@/assets/taco-real-1.jpg";
-import tacoSpicy from "@/assets/taco-real-2.jpg";
-import tacoXxl from "@/assets/taco-real-3.jpg";
-import tacoBbq from "@/assets/taco-real-4.jpg";
-import tacoVeggie from "@/assets/taco-real-5.jpg";
+import tacoPollo from "@/assets/taco-pollo.jpg";
+import tacoTernera from "@/assets/taco-ternera.jpg";
+import tacoMixto from "@/assets/taco-mixto.jpg";
+import tacoShawarma from "@/assets/taco-shawarma.jpg";
+import tacoFrankfurt from "@/assets/taco-frankfurt.jpg";
+import tacoCordon from "@/assets/taco-cordon.jpg";
+import tacoTenders from "@/assets/taco-tenders.jpg";
+import tacoNuggets from "@/assets/taco-nuggets.jpg";
+import shawarmaWrap from "@/assets/shawarma-wrap.jpg";
 import tenders from "@/assets/tenders.jpg";
 import nuggets from "@/assets/nuggets.jpg";
-import shawarmaWrap from "@/assets/shawarma-wrap.jpg";
 
 // Pizzas
 import pizzaMargarita from "@/assets/pizza.jpg";
