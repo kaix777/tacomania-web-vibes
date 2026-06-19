@@ -58,6 +58,7 @@ import cake from "@/assets/cake.jpg";
 import water from "@/assets/water.jpg";
 import soda from "@/assets/soda.jpg";
 import beer from "@/assets/beer.jpg";
+import wings from "@/assets/wings.jpg"; // NUEVA IMAGEN
 
 export const Route = createFileRoute("/carta")({
   head: () => ({
@@ -353,7 +354,7 @@ const sections: Section[] = [
             name: "Completa tu menú con entrante",
             price: "2,50 €",
             desc: "A elegir entre nuggets, tenders, palos de queso o alitas.",
-            image: sauces,
+            image: wings, // antes: sauces
           },
         ],
       },
