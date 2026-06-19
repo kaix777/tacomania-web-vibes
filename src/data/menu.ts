@@ -8,11 +8,39 @@ import sauces from "@/assets/sauces.jpg";
 import drinks from "@/assets/drinks.jpg";
 
 export const favorites = [
-  { name: "El Clásico", description: "Ternera, cheddar fundido, patatas y salsa de la casa.", price: "8,50€", image: classic },
-  { name: "El Picantón", description: "Pollo crujiente, jalapeños, cheddar y salsa diabla.", price: "9,00€", image: spicy },
-  { name: "El XXL Mania", description: "Triple carne, doble queso, patatas y salsa secreta.", price: "12,90€", image: xxl },
-  { name: "BBQ Bacon", description: "Doble bacon, BBQ ahumada y cheddar fundido.", price: "9,90€", image: bbq },
-  { name: "El Veggie", description: "Falafel, verduras asadas y queso vegano.", price: "8,00€", image: veggie },
+  {
+    name: "Taco Ternera",
+    description:
+      "Ternera, patatas, queso, salsa andalouse, salsa Tacomanía.",
+    price: "7,50 €",
+    image: classic,
+  },
+  {
+    name: "Taco Shawarma",
+    description:
+      "Carne shawarma, patatas, queso, salsa de yogur, salsa Tacomanía, salsa andalouse.",
+    price: "6,00 €",
+    image: spicy,
+  },
+  {
+    name: "Pizza Tacomanía",
+    description: "Pollo marinado, ternera, salsa andalouse.",
+    price: "9,00 €",
+    image: xxl,
+  },
+  {
+    name: "Kapsalon",
+    description: "Patatas, kebab, queso fundido y salsas.",
+    price: "6,50 €",
+    image: fries,
+  },
+  {
+    name: "Supercombo Tacomanía",
+    description:
+      "Nuggets, tenders, palos de queso, alitas, patatas, carne a elegir y dos salsas.",
+    price: "10,00 €",
+    image: sauces,
+  },
 ] as const;
 
 export type MenuItem = { name: string; desc: string; price: string; image: string };
