@@ -92,14 +92,14 @@ const sections: Section[] = [
     groups: [
       {
         items: [
-          { name: "Taco Pollo", price: "6,50 €", desc: "Pollo marinado, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoBbq },
-          { name: "Taco Ternera", price: "7,50 €", tag: "Top", desc: "Ternera, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoClassic },
-          { name: "Taco Mixto", price: "7,00 €", desc: "Pollo marinado, ternera, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoXxl },
-          { name: "Taco Shawarma", price: "6,00 €", tag: "Top", desc: "Carne shawarma, patatas, queso, salsa de yogur, salsa Tacomanía, salsa andalouse.", image: tacoSpicy },
-          { name: "Taco Frankfurt", price: "6,50 €", desc: "Salchicha, ternera, patatas, queso, cebolla crispy, salsa rosa, salsa Tacomanía.", image: tacoVeggie },
-          { name: "Taco Cordon Bleu", price: "6,50 €", desc: "Cordon bleu, jamón, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoClassic },
-          { name: "Taco Tenders", price: "6,00 €", desc: "Pollo crispy, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tenders },
-          { name: "Taco Nuggets", price: "6,00 €", desc: "Nuggets, patatas, queso, salsa andalouse, salsa Tacomanía.", image: nuggets },
+          { name: "Taco Pollo", price: "6,50 €", desc: "Pollo marinado, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoPollo },
+          { name: "Taco Ternera", price: "7,50 €", tag: "Top", desc: "Ternera, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoTernera },
+          { name: "Taco Mixto", price: "7,00 €", desc: "Pollo marinado, ternera, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoMixto },
+          { name: "Taco Shawarma", price: "6,00 €", tag: "Top", desc: "Carne shawarma, patatas, queso, salsa de yogur, salsa Tacomanía, salsa andalouse.", image: tacoShawarma },
+          { name: "Taco Frankfurt", price: "6,50 €", desc: "Salchicha, ternera, patatas, queso, cebolla crispy, salsa rosa, salsa Tacomanía.", image: tacoFrankfurt },
+          { name: "Taco Cordon Bleu", price: "6,50 €", desc: "Cordon bleu, jamón, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoCordon },
+          { name: "Taco Tenders", price: "6,00 €", desc: "Pollo crispy, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoTenders },
+          { name: "Taco Nuggets", price: "6,00 €", desc: "Nuggets, patatas, queso, salsa andalouse, salsa Tacomanía.", image: tacoNuggets },
         ],
       },
       {
