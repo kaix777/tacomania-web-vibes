@@ -22,7 +22,13 @@ export function Header() {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-background/85 border-b border-border">
       <div className="mx-auto max-w-6xl px-3 sm:px-4 h-16 flex items-center justify-between gap-2">
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img src={logo} alt="Tacomania" width={40} height={40} className="h-9 w-9 sm:h-10 sm:w-10 rounded-full ring-2 ring-primary object-cover" />
+          <img
+            src={logo}
+            alt="Tacomania"
+            width={40}
+            height={40}
+            className="h-9 w-9 sm:h-10 sm:w-10 rounded-full ring-2 ring-primary object-cover"
+          />
           <span className="font-display text-lg sm:text-xl tracking-wider hidden xs:inline">
             TACO<span className="text-primary">MANIA</span>
           </span>
