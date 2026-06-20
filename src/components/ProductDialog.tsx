@@ -67,11 +67,7 @@ export function ProductDialog({
 
         <div className="grid sm:grid-cols-2">
           <div className="aspect-[4/3] bg-muted sm:aspect-auto">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="h-full w-full object-cover"
-            />
+            <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
           </div>
           <div className="flex flex-col justify-center p-6 sm:p-8">
             <h2 id={titleId} className="font-display text-3xl leading-none sm:text-4xl">

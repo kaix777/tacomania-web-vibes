@@ -46,8 +46,7 @@ import beer from "@/assets/beer.jpg";
 export const favorites = [
   {
     name: "Taco Ternera",
-    description:
-      "Ternera, patatas, queso, salsa andalouse, salsa Tacomanía.",
+    description: "Ternera, patatas, queso, salsa andalouse, salsa Tacomanía.",
     price: "7,50 €",
     image: tacoTernera,
   },
@@ -78,8 +77,7 @@ export const favorites = [
   },
   {
     name: "Supercombo",
-    description:
-      "Nuggets, tenders, palos de queso, alitas, patatas, carne a elegir y dos salsas.",
+    description: "Nuggets, tenders, palos de queso, alitas, patatas, carne a elegir y dos salsas.",
     price: "10,00 €",
     image: supercombo,
   },
@@ -155,12 +153,32 @@ export const menu: MenuSection[] = [
   {
     title: "Pizzas",
     items: [
-      { name: "Margarita", desc: "Clásica de tomate y queso.", price: "6,00 €", image: pizzaMargarita },
-      { name: "Prosciutto", desc: "Jamón cocido y queso fundido.", price: "7,00 €", image: pizzaProsciutto },
-      { name: "Prosciutto e Fungi", desc: "Jamón y champiñones.", price: "7,50 €", image: pizzaProsciutto },
+      {
+        name: "Margarita",
+        desc: "Clásica de tomate y queso.",
+        price: "6,00 €",
+        image: pizzaMargarita,
+      },
+      {
+        name: "Prosciutto",
+        desc: "Jamón cocido y queso fundido.",
+        price: "7,00 €",
+        image: pizzaProsciutto,
+      },
+      {
+        name: "Prosciutto e Fungi",
+        desc: "Jamón y champiñones.",
+        price: "7,50 €",
+        image: pizzaProsciutto,
+      },
       { name: "Pepperoni", desc: "Pepperoni y queso.", price: "7,00 €", image: pizzaPepperoni },
       { name: "Shawarma", desc: "Carne shawarma y queso.", price: "7,00 €", image: pizzaBbq },
-      { name: "Shawarma y Pimientos", desc: "Carne shawarma y pimientos.", price: "7,50 €", image: pizzaBbq },
+      {
+        name: "Shawarma y Pimientos",
+        desc: "Carne shawarma y pimientos.",
+        price: "7,50 €",
+        image: pizzaBbq,
+      },
       {
         name: "Tacomanía",
         desc: "Pollo marinado, ternera, salsa andalouse.",
@@ -176,8 +194,18 @@ export const menu: MenuSection[] = [
         image: pizzaBbq,
       },
       { name: "Campera", desc: "Huevo y carne picada.", price: "8,00 €", image: pizzaCarbonara },
-      { name: "Carbonara", desc: "Salsa cremosa estilo carbonara.", price: "8,00 €", image: pizzaCarbonara },
-      { name: "Frankfurt", desc: "Salchicha tipo frankfurt.", price: "7,00 €", image: pizzaPepperoni },
+      {
+        name: "Carbonara",
+        desc: "Salsa cremosa estilo carbonara.",
+        price: "8,00 €",
+        image: pizzaCarbonara,
+      },
+      {
+        name: "Frankfurt",
+        desc: "Salchicha tipo frankfurt.",
+        price: "7,00 €",
+        image: pizzaPepperoni,
+      },
     ],
   },
   {

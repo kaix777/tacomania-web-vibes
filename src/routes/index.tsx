@@ -10,7 +10,11 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Tacomania — Tacos franceses con mucho queso" },
-      { name: "description", content: "Tacos franceses XXL: rápidos, potentes y con queso fundido. Por la noche y por el día." },
+      {
+        name: "description",
+        content:
+          "Tacos franceses XXL: rápidos, potentes y con queso fundido. Por la noche y por el día.",
+      },
       { property: "og:title", content: "Tacomania — Tacos franceses" },
       { property: "og:description", content: "Los mejores tacos franceses de la ciudad." },
     ],
@@ -25,7 +29,13 @@ function Index() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-black text-white">
         <div className="absolute inset-0 opacity-50">
-          <img src={heroImg} alt="" width={1920} height={1080} className="h-full w-full object-cover" />
+          <img
+            src={heroImg}
+            alt=""
+            width={1920}
+            height={1080}
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/30" />
         </div>
         <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-primary blur-3xl opacity-40" />
@@ -46,7 +56,9 @@ function Index() {
               <Flame size={14} /> French tacos · Street food
             </span>
             <h1 className="mt-4 font-display text-6xl sm:text-7xl md:text-9xl leading-[0.85] text-primary drop-shadow-[0_4px_30px_rgba(255,40,40,0.5)]">
-              TACO<br />MANIA
+              TACO
+              <br />
+              MANIA
             </h1>
             <p className="mt-4 text-base sm:text-lg md:text-xl font-semibold max-w-md mx-auto md:mx-0">
               Los mejores tacos franceses de la ciudad.
@@ -89,14 +101,17 @@ function Index() {
       <section className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">¿Qué es?</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">
+              ¿Qué es?
+            </span>
             <h2 className="mt-2 font-display text-4xl md:text-5xl">
               El <span className="text-primary">taco francés</span>, explicado
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Olvida lo que sabes del taco mexicano. El <strong className="text-foreground">taco francés</strong> es
-              una tortilla de trigo rellena con carne a elegir, patatas fritas, queso fundido y salsas. Se cierra
-              como un sobre y se prensa en plancha hasta quedar crujiente por fuera y cremoso por dentro.
+              Olvida lo que sabes del taco mexicano. El{" "}
+              <strong className="text-foreground">taco francés</strong> es una tortilla de trigo
+              rellena con carne a elegir, patatas fritas, queso fundido y salsas. Se cierra como un
+              sobre y se prensa en plancha hasta quedar crujiente por fuera y cremoso por dentro.
             </p>
             <p className="mt-3 text-muted-foreground leading-relaxed">
               Nació en Lyon, conquistó TikTok y ahora está aquí, listo para volverte adicto.
@@ -108,9 +123,14 @@ function Index() {
               { n: "100%", l: "Queso" },
               { n: "5min", l: "Plancha" },
             ].map((s) => (
-              <div key={s.l} className="rounded-2xl bg-card border border-primary/30 p-4 text-center shadow-card">
+              <div
+                key={s.l}
+                className="rounded-2xl bg-card border border-primary/30 p-4 text-center shadow-card"
+              >
                 <div className="font-display text-3xl text-primary">{s.n}</div>
-                <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{s.l}</div>
+                <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
+                  {s.l}
+                </div>
               </div>
             ))}
           </div>
@@ -122,7 +142,9 @@ function Index() {
         <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
           <div className="flex items-end justify-between flex-wrap gap-4">
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-primary">Top ventas</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-primary">
+                Top ventas
+              </span>
               <h2 className="mt-2 font-display text-4xl md:text-5xl">Nuestros favoritos</h2>
             </div>
             <Link to="/carta" className="text-sm font-semibold text-primary hover:underline">
@@ -134,7 +156,14 @@ function Index() {
               <button
                 type="button"
                 key={t.name}
-                onClick={() => setSelected({ name: t.name, description: t.description, price: t.price, image: t.image })}
+                onClick={() =>
+                  setSelected({
+                    name: t.name,
+                    description: t.description,
+                    price: t.price,
+                    image: t.image,
+                  })
+                }
                 className="group text-left rounded-3xl overflow-hidden bg-card border border-border shadow-card hover:-translate-y-1 hover:border-primary hover:shadow-glow transition-all duration-300 cursor-pointer"
               >
                 <div className="aspect-[4/3] overflow-hidden bg-black">
@@ -176,14 +205,16 @@ function Index() {
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <a
               href="https://www.tiktok.com/@tacomania.to"
-              target="_blank" rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-black text-white px-6 py-3 font-bold uppercase text-sm tracking-wide hover:scale-105 transition-transform"
             >
               <Music2 size={18} /> TikTok
             </a>
             <a
               href="https://www.instagram.com/tacomania.to"
-              target="_blank" rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-white text-black px-6 py-3 font-bold uppercase text-sm tracking-wide hover:scale-105 transition-transform"
             >
               <Instagram size={18} /> Instagram

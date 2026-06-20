@@ -478,7 +478,7 @@ function TabsNav() {
           if (e.isIntersecting) setActive(e.target.id);
         });
       },
-      { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
+      { rootMargin: "-30% 0px -60% 0px", threshold: 0 },
     );
     sections.forEach((s) => {
       const el = document.getElementById(s.id);
@@ -488,8 +488,7 @@ function TabsNav() {
   }, []);
 
   useEffect(() => {
-    const el =
-      railRef.current?.querySelector<HTMLElement>(`[data-tab="${active}"]`);
+    const el = railRef.current?.querySelector<HTMLElement>(`[data-tab="${active}"]`);
     el?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
   }, [active]);
 
@@ -528,25 +527,17 @@ function MenuSection({ section }: { section: Section }) {
     <section id={section.id} className="scroll-mt-24">
       <header className="mb-10">
         <div className="flex items-center gap-3">
-          <span className="font-display text-3xl text-primary leading-none">
-            {section.number}
-          </span>
+          <span className="font-display text-3xl text-primary leading-none">{section.number}</span>
           <span className="h-px w-12 bg-primary/40" />
           <span className="text-xs font-bold uppercase tracking-[0.3em] text-primary/90">
             {section.kicker}
           </span>
         </div>
         <div className="mt-3 flex items-end gap-5">
-          <h2 className="font-display text-5xl md:text-7xl leading-none">
-            {section.title}
-          </h2>
+          <h2 className="font-display text-5xl md:text-7xl leading-none">{section.title}</h2>
           <section.Icon className="text-primary mb-2" size={28} />
         </div>
-        {section.intro && (
-          <p className="mt-4 max-w-2xl text-muted-foreground">
-            {section.intro}
-          </p>
-        )}
+        {section.intro && <p className="mt-4 max-w-2xl text-muted-foreground">{section.intro}</p>}
         <div className="mt-6 h-[2px] w-24 bg-gradient-to-r from-primary to-transparent" />
       </header>
 
@@ -572,11 +563,7 @@ function MenuSection({ section }: { section: Section }) {
 function GroupBlock({ group }: { group: Group }) {
   return (
     <div>
-      {group.title && (
-        <h3 className="font-display text-3xl text-primary mb-6">
-          {group.title}
-        </h3>
-      )}
+      {group.title && <h3 className="font-display text-3xl text-primary mb-6">{group.title}</h3>}
       <div className="grid gap-5 sm:gap-6 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {group.items.map((item) => (
           <ProductCard key={item.name} item={item} />
@@ -610,9 +597,7 @@ function ProductCard({ item }: { item: Item }) {
         )}
       </div>
       <div className="flex-1 flex flex-col p-4">
-        <h4 className="font-display text-lg sm:text-xl leading-tight">
-          {item.name}
-        </h4>
+        <h4 className="font-display text-lg sm:text-xl leading-tight">{item.name}</h4>
         {item.desc && (
           <p className="mt-1.5 text-xs sm:text-sm text-muted-foreground leading-snug line-clamp-3">
             {item.desc}
@@ -630,9 +615,7 @@ function ExtrasCard({ extra }: { extra: Extra }) {
       <div className="relative">
         <div className="flex items-center gap-2 text-primary">
           <Sparkles size={18} />
-          <span className="text-xs font-bold uppercase tracking-[0.3em]">
-            A tu manera
-          </span>
+          <span className="text-xs font-bold uppercase tracking-[0.3em]">A tu manera</span>
         </div>
         <h4 className="mt-2 font-display text-3xl">{extra.title}</h4>
         <ul className="mt-4 space-y-2 text-sm md:text-base text-foreground/85">
@@ -653,8 +636,7 @@ function FinalCta() {
     <section className="relative overflow-hidden rounded-3xl bg-grain text-primary-foreground p-8 md:p-14 text-center">
       <h2 className="font-display text-4xl md:text-5xl">¿Listo para pedir?</h2>
       <p className="mt-3 max-w-xl mx-auto opacity-90">
-        Pásate por la tienda. Te esperamos con la plancha encendida y el queso
-        fundiéndose.
+        Pásate por la tienda. Te esperamos con la plancha encendida y el queso fundiéndose.
       </p>
       <div className="mt-6 flex flex-wrap justify-center gap-3">
         <Link
@@ -662,10 +644,7 @@ function FinalCta() {
           className="group inline-flex items-center gap-2 rounded-full bg-black text-white px-7 py-3.5 font-bold uppercase text-sm tracking-wide hover:scale-105 transition-transform"
         >
           Cómo llegar
-          <ArrowRight
-            size={18}
-            className="group-hover:translate-x-1 transition-transform"
-          />
+          <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
         </Link>
         <Link
           to="/"
@@ -675,8 +654,7 @@ function FinalCta() {
         </Link>
       </div>
       <p className="mt-8 text-xs opacity-70">
-        * Carta orientativa. Precios y disponibilidad pueden variar según
-        promociones.
+        * Carta orientativa. Precios y disponibilidad pueden variar según promociones.
       </p>
     </section>
   );

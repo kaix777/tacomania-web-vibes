@@ -31,9 +31,9 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-taco-bg: #0F0F0F;
-  --color-taco-yellow: #FFCC00;
-  --color-taco-red: #E60000;
+  --color-taco-bg: #0f0f0f;
+  --color-taco-yellow: #ffcc00;
+  --color-taco-red: #e60000;
   --font-display: "Bebas Neue", "Impact", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --shadow-glow: 0 20px 60px -20px color-mix(in oklab, var(--primary) 60%, transparent);
@@ -41,11 +41,11 @@
 }
 
 @utility bg-taco-noise {
-  background-color: #0F0F0F;
+  background-color: #0f0f0f;
   background-image:
-    radial-gradient(circle at 20% 15%, rgba(255,204,0,0.05), transparent 50%),
-    radial-gradient(circle at 80% 85%, rgba(230,0,0,0.06), transparent 55%),
-    repeating-linear-gradient(45deg, rgba(255,255,255,0.012) 0 2px, transparent 2px 6px);
+    radial-gradient(circle at 20% 15%, rgba(255, 204, 0, 0.05), transparent 50%),
+    radial-gradient(circle at 80% 85%, rgba(230, 0, 0, 0.06), transparent 55%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.012) 0 2px, transparent 2px 6px);
 }
 
 /* Default = DARK (negro + rojo). Light variant available via .light */
@@ -99,15 +99,22 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, .font-display {
+  h1,
+  h2,
+  h3,
+  .font-display {
     font-family: var(--font-display);
     letter-spacing: 0.01em;
   }
@@ -116,8 +123,16 @@
 @layer utilities {
   .bg-grain {
     background-image:
-      radial-gradient(circle at 25% 20%, color-mix(in oklab, var(--primary-glow) 18%, transparent), transparent 55%),
-      radial-gradient(circle at 80% 70%, color-mix(in oklab, var(--primary-deep) 35%, transparent), transparent 60%),
+      radial-gradient(
+        circle at 25% 20%,
+        color-mix(in oklab, var(--primary-glow) 18%, transparent),
+        transparent 55%
+      ),
+      radial-gradient(
+        circle at 80% 70%,
+        color-mix(in oklab, var(--primary-deep) 35%, transparent),
+        transparent 60%
+      ),
       linear-gradient(135deg, var(--primary-deep), var(--primary));
   }
   .text-stroke {

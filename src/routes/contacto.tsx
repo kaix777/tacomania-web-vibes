@@ -8,8 +8,7 @@ export const Route = createFileRoute("/contacto")({
       { title: "Contacto — Tacomania" },
       {
         name: "description",
-        content:
-          "Visítanos en Avenida Isabel Manoja 21. Abierto todos los días de 19:00 a 02:00.",
+        content: "Visítanos en Avenida Isabel Manoja 21. Abierto todos los días de 19:00 a 02:00.",
       },
       { property: "og:title", content: "Contacto — Tacomania" },
       {
@@ -25,8 +24,7 @@ const ADDRESS_LINE_1 = "Avenida Isabel Manoja 21";
 const ADDRESS_LINE_2 = "Torremolinos, Málaga";
 const SCHEDULE_TEXT = "Todos los días · 19:00 – 02:00";
 
-const MAP_EMBED =
-  "https://www.google.com/maps?q=36.6239498,-4.5021854&output=embed&z=17";
+const MAP_EMBED = "https://www.google.com/maps?q=36.6239498,-4.5021854&output=embed&z=17";
 
 // ENLACES ACTUALIZADOS A TU MAPS CORRECTO
 const MAP_LINK = "https://maps.app.goo.gl/Xu6qCCXgWNuVap3z8";
@@ -72,8 +70,7 @@ function Contacto() {
             </h1>
 
             <p className="mt-6 max-w-xl text-lg opacity-90">
-              Sin reservas, sin formularios. Solo tacos, gente y buena música.
-              Ven a buscarnos.
+              Sin reservas, sin formularios. Solo tacos, gente y buena música. Ven a buscarnos.
             </p>
 
             <div
@@ -83,11 +80,7 @@ function Contacto() {
                   : "bg-primary-foreground/10 border-primary-foreground/30"
               }`}
             >
-              <span
-                className={`relative flex h-2.5 w-2.5 ${
-                  openNow ? "" : "opacity-60"
-                }`}
-              >
+              <span className={`relative flex h-2.5 w-2.5 ${openNow ? "" : "opacity-60"}`}>
                 {openNow && (
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary-foreground opacity-75" />
                 )}
@@ -124,9 +117,7 @@ function Contacto() {
                 <div className="mt-4 font-display text-3xl md:text-4xl leading-tight">
                   {ADDRESS_LINE_1}
                 </div>
-                <div className="mt-1 text-muted-foreground">
-                  {ADDRESS_LINE_2}
-                </div>
+                <div className="mt-1 text-muted-foreground">{ADDRESS_LINE_2}</div>
 
                 <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary group-hover:gap-3 transition-all">
                   Ver en Google Maps
@@ -150,10 +141,7 @@ function Contacto() {
 
               <ul className="mt-5 grid grid-cols-7 gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-center">
                 {["L", "M", "X", "J", "V", "S", "D"].map((d) => (
-                  <li
-                    key={d}
-                    className="rounded-lg bg-primary/10 text-primary py-2"
-                  >
+                  <li key={d} className="rounded-lg bg-primary/10 text-primary py-2">
                     {d}
                   </li>
                 ))}
